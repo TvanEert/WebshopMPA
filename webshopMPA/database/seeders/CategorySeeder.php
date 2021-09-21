@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class CategorySeeder extends Seeder
 {
@@ -15,10 +16,17 @@ class CategorySeeder extends Seeder
     {
         //
         DB::table('categories')->insert([
-            'category' => 'posters'
-        ]);
-        DB::table('categories')->insert([
-            'catefory' => 'hats'
-        ]);
+            [
+                'category' => 'Horror'
+            ],[
+                'category' => 'Action'
+            ],[
+                'category' => 'Rpg'
+            ],[
+                'category' => 'Multiplayer'
+            ],[
+                'category' => 'Shooter'
+            ]
+    ]);
     }
 }
