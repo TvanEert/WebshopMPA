@@ -27,6 +27,6 @@ class CategorySeeder extends Seeder
             ],[
                 'category' => 'Shooter'
             ]
-    ]);
+        ]);
     }
 }
