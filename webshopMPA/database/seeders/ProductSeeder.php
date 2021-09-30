@@ -15,9 +15,9 @@ class ProductSeeder extends Seeder
     public function run()
     {
         DB::table('products')->insert([
-                'name' => 'Dead by Daylight',
-                'description' => 'test description dbd',
-                'price' => 15.99
+            'name' => 'Dead by Daylight',
+            'description' => 'test description dbd',
+            'price' => 15.99
         ]);
     }
 }
