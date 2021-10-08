@@ -19,7 +19,7 @@ use App\Http\Controllers\CategoryContoller;
 | Category Routes
 |--------------------------------------------------------------------------
 */
-Route::get('/category', [CategoryContoller::class, 'index']);
+Route::get('/', [CategoryContoller::class, 'index']);
 
 /*
 |--------------------------------------------------------------------------
@@ -27,9 +27,4 @@ Route::get('/category', [CategoryContoller::class, 'index']);
 |--------------------------------------------------------------------------
 */
 
-/*
-|--------------------------------------------------------------------------
-| Home-view Route
-|--------------------------------------------------------------------------
-*/
-Route::get('/', function() { return view('home'); });
+

@@ -1,8 +1,8 @@
 @include('includes.header')
 @include('includes.navbar')
 <div class="container-fluid text-center">
-    <div class="container w-50 h-50">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="container w-50 h-50">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="{{ url('image/battlefield2042.jpg') }}" class="d-block w-100" alt="...">
@@ -24,5 +24,12 @@
         </button>
     </div>
     </div>
+
+    @if(isset($allCategories))
+        @foreach ($allCategories as $category)
+            <p>{{$category->category}} </p>
+        @endforeach
+    @endif   
+
 </div>
 @include('includes.footer')

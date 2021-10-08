@@ -9,7 +9,7 @@ class CategoryContoller extends Controller
 {
     function index(){
         $allCategories = Category::all();
-
+        
         return view('home', compact('allCategories'));
     }
 }
