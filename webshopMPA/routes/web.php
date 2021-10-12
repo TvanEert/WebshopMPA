@@ -19,7 +19,7 @@ use App\Http\Controllers\CategoryContoller;
 | Category Routes
 |--------------------------------------------------------------------------
 */
-Route::get('/', [CategoryContoller::class, 'index']);
+Route::get('/', [CategoryContoller::class, 'getAllCategories']);
 
 /*
 |--------------------------------------------------------------------------

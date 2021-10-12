@@ -21,7 +21,7 @@ class CategorySeeder extends Seeder
             ],[
                 'category' => 'Action'
             ],[
-                'category' => 'Rpg'
+                'category' => 'RPG'
             ],[
                 'category' => 'Multiplayer'
             ],[

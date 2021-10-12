@@ -7,7 +7,7 @@ use App\Models\Category;
 
 class CategoryContoller extends Controller
 {
-    function index(){
+    function getAllCategories(){
         $allCategories = Category::all();
         
         return view('home', compact('allCategories'));
