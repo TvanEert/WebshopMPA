@@ -3,3 +3,8 @@
     display: flex;
     justify-content: space-between;
 }
+
+.categoryCard{
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}

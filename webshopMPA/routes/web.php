@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryContoller;
+use App\Http\Controllers\CategoryProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,5 +27,6 @@ Route::get('/', [CategoryContoller::class, 'getAllCategories']);
 | Product Routes
 |--------------------------------------------------------------------------
 */
+Route::get('/category/{categoryId}', [CategoryProductController::class, 'getProductsWhereCategory']);
 
 

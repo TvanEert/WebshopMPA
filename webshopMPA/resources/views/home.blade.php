@@ -5,13 +5,13 @@
         <div class="container w-50 h-50">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{ url('image/battlefield2042.jpg') }}" class="d-block w-100" alt="...">
+                    <img src="{{ url('image/battlefield2042.jpg') }}" class="d-block w-100">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ url('image/deathloop.jpg') }}" class="d-block w-100" alt="...">
+                    <img src="{{ url('image/deathloop.jpg') }}" class="d-block w-100">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ url('image/deadbydaylight.jpg') }}" class="d-block w-100" alt="...">
+                    <img src="{{ url('image/deadbydaylight.jpg') }}" class="d-block w-100">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -27,11 +27,11 @@
     <div class="container-fluid categoryCardContanier">
         @if(isset($allCategories))
             @foreach ($allCategories as $category)
-            <div class="card" style="width: 18rem;">
+            <div class="card categoryCard" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">{{ $category->category}}</h5>
                     <p class="card-text">Open page with all products in category: {{ $category->category}}.</p>
-                    <a href="#" class="btn btn-primary">Open {{ $category->category}}</a>
+                    <a href="{{ url('/category', $category->id)}}" class="btn btn-primary">Open {{ $category->category}}</a>
                 </div>
             </div>
             @endforeach
