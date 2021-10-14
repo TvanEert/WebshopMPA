@@ -24,7 +24,7 @@
             </button>
         </div>
     </div>
-    <div class="container-fluid categoryCardContanier">
+    <div class="container-fluid categoryCardContainer">
         @if(isset($allCategories))
             @foreach ($allCategories as $category)
             <div class="card categoryCard" style="width: 18rem;">

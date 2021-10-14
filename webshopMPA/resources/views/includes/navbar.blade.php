@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#">All products</a>
+          <a class="nav-link" href="/products">All products</a>
         </li>
       </ul>
     </div>

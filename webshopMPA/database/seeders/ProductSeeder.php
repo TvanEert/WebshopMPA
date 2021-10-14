@@ -25,7 +25,7 @@ class ProductSeeder extends Seeder
                 'price' => 59.99
             ],[
                 'name' => 'The Witcher 3: Wild Hunt',
-                'description' => 'The Witcher 3: Wild Hunt',
+                'description' => 'test description The Witcher 3: Wild Hunt',
                 'price' => 29.99
             ],[
                 'name' => 'Deathloop',

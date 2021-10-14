@@ -1,10 +1,26 @@
-.categoryCardContanier{ 
+.categoryCardContainer
+{ 
     margin-top: 5rem;
     display: flex;
     justify-content: space-between;
 }
 
-.categoryCard{
+.categoryCard
+{
     margin-right: 0.5rem;
     margin-left: 0.5rem;
+}
+
+.productCardContainer
+{
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.productCard
+{
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-between;
 }

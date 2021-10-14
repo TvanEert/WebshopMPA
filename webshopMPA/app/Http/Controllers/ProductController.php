@@ -7,5 +7,9 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
-    //
+    function getAllProducts(){
+        $allProducts = Product::all();
+
+        return view('product', compact('allProducts'));
+    }
 }

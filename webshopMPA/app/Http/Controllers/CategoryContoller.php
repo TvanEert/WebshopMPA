@@ -12,4 +12,10 @@ class CategoryContoller extends Controller
         
         return view('home', compact('allCategories'));
     }
+
+    function getAllProductsFromCategory(){
+        $categoryProducts;
+
+        return view('categoryProduct', compact('categoryProducts'));
+    }
 }
