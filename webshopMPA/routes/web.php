@@ -21,6 +21,7 @@ use App\Http\Controllers\ProductController;
 |--------------------------------------------------------------------------
 */
 Route::get('/', [CategoryContoller::class, 'getAllCategories']);
+Route::get('/', [CategoryContoller::class, 'getAllProductsFromCategory']);
 
 /*
 |--------------------------------------------------------------------------
