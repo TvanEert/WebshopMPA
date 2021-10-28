@@ -13,8 +13,8 @@ class CategoryContoller extends Controller
         return view('home', compact('allCategories'));
     }
 
-    function getAllProductsFromCategory(){
-        $categoryProducts;
+    function getAllProductsFromCategory($category_id){
+        $categoryProducts = Category::find($category_id)->products()->get();
 
         return view('categoryProduct', compact('categoryProducts'));
     }

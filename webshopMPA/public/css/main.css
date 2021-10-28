@@ -1,8 +1,9 @@
 .categoryCardContainer
 { 
-    margin-top: 5rem;
+    margin-top: 2.5rem;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .categoryCard
@@ -13,14 +14,16 @@
 
 .productCardContainer
 {
-    margin-top: 5rem;
+    margin-top: 2.5rem;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .productCard
 {
-    margin-top: 5rem;
-    display: flex;
-    justify-content: space-between;
+    margin: 0.5rem;
+}
+
+.productPage{
+    justify-content: center;
 }

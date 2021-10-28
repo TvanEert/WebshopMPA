@@ -27,7 +27,7 @@
     <div class="container-fluid categoryCardContainer">
         @if(isset($allCategories))
             @foreach ($allCategories as $category)
-            <div class="card categoryCard" style="width: 18rem;">
+            <div class="card categoryCard" style="width: 16rem;">
                 <div class="card-body">
                     <h5 class="card-title">{{ $category->category}}</h5>
                     <p class="card-text">Open page with all products in category: {{ $category->category}}.</p>
