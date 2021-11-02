@@ -15,7 +15,8 @@ class ProductController extends Controller
 
     function getProduct($product_id){
         $product = Product::where('id', $product_id)->get();
+        $categories = Product::find($product_id)->categories()->get();
 
-        return view('product', compact('product'));
+        return view('product', compact('product', 'categories'));
     }
 }
