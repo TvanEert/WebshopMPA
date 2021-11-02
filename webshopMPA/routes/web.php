@@ -29,5 +29,6 @@ Route::get('/category/{category_id}', [CategoryContoller::class, 'getAllProducts
 |--------------------------------------------------------------------------
 */
 Route::get('/products', [ProductController::class, 'getAllProducts']);
+Route::get('/product/{product_id}', [ProductController::class, 'getProduct']);
 
 
