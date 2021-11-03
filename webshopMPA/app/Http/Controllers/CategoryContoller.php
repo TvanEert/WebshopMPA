@@ -14,7 +14,7 @@ class CategoryContoller extends Controller
     }
 
     function getAllProductsFromCategory($category_id){
-        $categoryProducts = Category::find($category_id)->products()->get();
+        $categoryProducts = Category::getProducts($category_id);
 
         return view('categoryProduct', compact('categoryProducts'));
     }
