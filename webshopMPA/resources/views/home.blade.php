@@ -31,7 +31,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ $category->category}}</h5>
                     <p class="card-text">Open page with all products in category: {{ $category->category}}.</p>
-                    <a href="{{ url('/category', $category->id)}}" class="btn btn-primary">Open {{ $category->category}}</a>
+                    <a href="{{ url('/category', $category->id) }}" class="btn btn-primary">Open {{ $category->category}}</a>
                 </div>
             </div>
             @endforeach

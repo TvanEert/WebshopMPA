@@ -27,3 +27,12 @@
 .productPage{
     justify-content: center;
 }
+
+h5>a{
+    text-decoration: none;
+    color: black;
+}
+
+h5>a:hover{
+    color: black;
+}
