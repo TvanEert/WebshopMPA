@@ -23,7 +23,7 @@ class ProductSeeder extends Seeder
             ],[
                 'name' => 'Battlefield 2042',
                 'description' => 'test description Battlefield 2042',
-                'image' => 'https://lh3.googleusercontent.com/proxy/VlGvZoYvU5XwUHS7CgEqBjR8xwofPnjySdlX1wiBxx5yedaWO-YOE7ged2pSYf_0fRNkzje_ag5Z3aKZ0VEpPXtz57Tm7smKXsThfzVfiCxdlMh-JHx5hhhjetqBE2brz4kb_zFiElM30mZuCgA',
+                'image' => 'https://media.contentapi.ea.com/content/dam/battlefield/battlefield-2042/images/2021/04/k-1920x1080-featured-image.jpg.adapt.crop191x100.1200w.jpg',
                 'price' => 59.99
             ],[
                 'name' => 'The Witcher 3: Wild Hunt',

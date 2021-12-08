@@ -36,3 +36,6 @@ h5>a{
 h5>a:hover{
     color: black;
 }
+.carousel-margin{
+    margin: auto;
+}
