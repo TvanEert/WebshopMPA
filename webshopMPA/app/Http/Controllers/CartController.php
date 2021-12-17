@@ -11,8 +11,9 @@ class CartController extends Controller
 
     }
 
-    public function addProductToCart(){
-
+    public function addProductToCart($product_id){
+        $product = app(ProductController::class)->getProductWithoutCategory($product_id);
+        Cart::addToCart($product ,$product_id);
     }
 
     public function removeProductFromCart(){

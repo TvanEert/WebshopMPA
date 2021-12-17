@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryContoller;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,4 +33,10 @@ Route::get('/category/{category_id}', [CategoryContoller::class, 'getAllProducts
 Route::get('/products', [ProductController::class, 'getAllProducts']);
 Route::get('/product/{product_id}', [ProductController::class, 'getProduct']);
 
+/*
+|--------------------------------------------------------------------------
+| Cart Routes
+|--------------------------------------------------------------------------
+*/
 
+Route::get('/addToCart/{product_id}', [CartController::class, 'addProductToCart']);

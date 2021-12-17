@@ -19,5 +19,11 @@ class ProductController extends Controller
 
         return view('product', compact('product', 'categories'));
     }
+
+    function getProductWithoutCategory($product_id){
+        $product = Product::getOneProduct($product_id);
+
+        return $product;
+    }
 }
 

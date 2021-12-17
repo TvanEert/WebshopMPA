@@ -9,7 +9,7 @@
                         <h5 class="card-title"><a href="{{ url('/product', $product->id) }}">{{ $product->name}}</a></h5>
                         <p class="card-text">{{ $product->description}}.</p>
                         <h1>{{ $product->price}}</h1>
-                        <a href="" class="btn btn-primary">Add to card</a>
+                        <a href="{{ url('/addToCart', $product->id)}}" class="btn btn-primary">Add to card</a>
                     </div>
                 </div>
             @endforeach
