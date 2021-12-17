@@ -10,7 +10,7 @@
           <a class="nav-link" href="/products">All products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/">Cart</a>
+          <a class="nav-link" href="/cart">Cart</a>
         </li>
       </ul>
     </div>

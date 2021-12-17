@@ -2,9 +2,11 @@
 
 namespace App;
 
+use Illuminate\Http\Request;
+
 class Cart
 {
-    public $products = null;
+    public $products = [];
     public $totalQty = 0;
     public $totalPrice = 0;
 
@@ -29,17 +31,19 @@ class Cart
     }
 
     public function addToCart($product, $id){ 
-        $storedProducts = ['qty' => 0, 'price' => $product->price, 'product' => $product];
+        $storedProduct = ['qty' => 0, 'price' => $product[0]->price, 'product' => $product];
         if ($this->products) {
             if (array_key_exists($id, $this->products)) {
-                $storedProducts = $this->products[$id];
+                $storedProduct = $this->products[$id];
             }
         }
-        $storedProducts['qty']++;
-        $storedProducts['price'] = $product->price * $storedProducts['qty'];
-        $this->products[$id] = $storedProducts;
+        $storedProduct['qty']++;
+        $storedProduct['price'] = $product[0]->price * $storedProduct['qty'];
+        $this->products[$id] = $storedProduct;
         $this->totalQty++;
-        $this->totalPrice += $product->price;
+        $this->totalPrice += $product[0]->price;
+
+        session()->put('cart', $this);
     }
 
     public function removeFromCart(){

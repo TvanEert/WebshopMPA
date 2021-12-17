@@ -22,7 +22,7 @@ use App\Http\Controllers\CartController;
 | Category Routes
 |--------------------------------------------------------------------------
 */
-Route::get('/', [CategoryContoller::class, 'getAllCategories']);
+Route::get('/', [CategoryContoller::class, 'getAllCategories'])->name('home');
 Route::get('/category/{category_id}', [CategoryContoller::class, 'getAllProductsFromCategory']);
 
 /*
@@ -30,7 +30,7 @@ Route::get('/category/{category_id}', [CategoryContoller::class, 'getAllProducts
 | Product Routes
 |--------------------------------------------------------------------------
 */
-Route::get('/products', [ProductController::class, 'getAllProducts']);
+Route::get('/products', [ProductController::class, 'getAllProducts'])->name('products');
 Route::get('/product/{product_id}', [ProductController::class, 'getProduct']);
 
 /*
@@ -40,3 +40,4 @@ Route::get('/product/{product_id}', [ProductController::class, 'getProduct']);
 */
 
 Route::get('/addToCart/{product_id}', [CartController::class, 'addProductToCart']);
+Route::get('/cart', [CartController::class, 'getAllProductsFromCart'])->name('cart');
