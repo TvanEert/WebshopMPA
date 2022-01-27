@@ -30,6 +30,15 @@ class Cart
         }
     }
 
+    /**
+     * Call addToCart
+     * 
+     * @param $product
+     * @param int $id
+     * 
+     * Call session put to add product to the cart object
+     */
+
     public function addToCart($product, $id){ 
         $storedProduct = ['qty' => 0, 'price' => $product[0]->price, 'product' => $product];
         if ($this->products) {
@@ -46,7 +55,18 @@ class Cart
         session()->put('cart', $this);
     }
 
-    public function removeFromCart(){
-
+    /**
+     * Call removeAllFromCart
+     * 
+     * @param int $id
+     * 
+     * Call save to update session
+     */
+     
+    public function removeAllFromCart($id){
+        $this->totalQty -= $this->products[$id] ['qty'];
+        $this->totalprice -= $this->products[$id] ['price'];
+        unset($this->products[$id]);
+        $this->save();
     }
 }

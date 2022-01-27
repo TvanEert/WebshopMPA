@@ -38,6 +38,6 @@ Route::get('/product/{product_id}', [ProductController::class, 'getProduct']);
 | Cart Routes
 |--------------------------------------------------------------------------
 */
-
-Route::get('/addToCart/{product_id}', [CartController::class, 'addProductToCart']);
 Route::get('/cart', [CartController::class, 'getAllProductsFromCart'])->name('cart');
+Route::get('/addToCart/{product_id}', [CartController::class, 'addProductToCart']);
+Route::get('/removeFromCart/{product_id}', [CartController::class, 'removeProductFromCart']);

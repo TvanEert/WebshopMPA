@@ -12,7 +12,7 @@ class CartController extends Controller
         dd($cart);
     }
 
-    public function addProductToCart(Request $request,$product_id){
+    public function addProductToCart(Request $request, $product_id){
         $product = app(ProductController::class)->getProductWithoutCategory($product_id);
         $cart = new Cart($request);
         $cart->addToCart($product, $product_id);
@@ -20,11 +20,14 @@ class CartController extends Controller
         return redirect()->route('cart');
     }
 
-    public function removeProductFromCart(){
+    public function removeProductFromCart(Request $request, $product_id){
+        $cart = new Cart($request);
+        $cart->removeAllFromCart($product_id);
 
+        return redirect()->route('cart');
     }
 
-    public function changeProductAmountInCart(){
+    public function removeOneProductFromCart(){
 
     }
 }
