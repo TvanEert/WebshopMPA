@@ -19,10 +19,10 @@ class Cart
             $this->totalPrice = $oldcart->totalPrice;
         }  
 
-        $this->save();
+        $this->saveToSession();
     }
 
-    public function save(){
+    public function saveToSession(){
         if(count($this->products) > 0){
             session()->put('cart', $this);
         } else {
@@ -67,6 +67,19 @@ class Cart
         $this->totalQty -= $this->products[$id] ['qty'];
         $this->totalprice -= $this->products[$id] ['price'];
         unset($this->products[$id]);
-        $this->save();
+        $this->saveToSession();
+    }
+
+    public function reduceByOneInCart($id){
+        $this->products[$id]['qty']--;
+        $this->products[$id]['price'] -= $this->products[$id]['product']['price'];
+        $this->totalQty--;
+        $this->totalprice -= $this->products[$id]['product']['price'];
+
+        if ($this->products[$id]['qty'] <= 0) {
+            unset($this->products[$id]);
+        }
+
+        $this->saveToSession();
     }
 }

@@ -27,7 +27,10 @@ class CartController extends Controller
         return redirect()->route('cart');
     }
 
-    public function removeOneProductFromCart(){
-
+    public function reduceProductByOneInCart(){
+        $cart = new Cart($request);
+        $cart->reduceByOneInCart($request);
+        
+        return redirect()->route('cart');
     }
 }
