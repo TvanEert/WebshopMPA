@@ -3,19 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 use App\Cart;
 
 class CartController extends Controller
 {
     public function getAllProductsFromCart(Request $request){
         $cart = new Cart($request);
-        dd($cart);
+
+        $cartItems = $cart->cartItems;
+        $totalQty = $cart->totalQty;
+        $totalPrice = $cart->totalPrice;
+        
+        return view("cart", compact('cartItems', 'totalQty', 'totalPrice'));
     }
 
-    public function addProductToCart(Request $request, $product_id){
-        $product = app(ProductController::class)->getProductWithoutCategory($product_id);
+    public function addProductToCart(Request $request, Product $product){
         $cart = new Cart($request);
-        $cart->addToCart($product, $product_id);
+        $cart->addToCart($product);
 
         return redirect()->route('cart');
     }

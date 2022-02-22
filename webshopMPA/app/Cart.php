@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class Cart
 {
-    public $products = [];
+    public $cartItems = [];
     public $totalQty = 0;
     public $totalPrice = 0;
 
@@ -14,7 +14,7 @@ class Cart
         $oldcart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
 
         if($oldcart){
-            $this->products = $oldcart->products;
+            $this->cartItems = $oldcart->cartItems;
             $this->totalQty = $oldcart->totalQty;
             $this->totalPrice = $oldcart->totalPrice;
         }  
@@ -23,7 +23,7 @@ class Cart
     }
 
     public function saveToSession(){
-        if(count($this->products) > 0){
+        if(count($this->cartItems) > 0){
             session()->put('cart', $this);
         } else {
             session()->forget('cart');
@@ -39,19 +39,23 @@ class Cart
      * Call session put to add product to the cart object
      */
 
-    public function addToCart($product, $id){ 
-        $storedProduct = ['qty' => 0, 'price' => $product[0]->price, 'product' => $product];
-        if ($this->products) {
-            if (array_key_exists($id, $this->products)) {
-                $storedProduct = $this->products[$id];
-            }
-        }
-        $storedProduct['qty']++;
-        $storedProduct['price'] = $product[0]->price * $storedProduct['qty'];
-        $this->products[$id] = $storedProduct;
-        $this->totalQty++;
-        $this->totalPrice += $product[0]->price;
+    public function addToCart($product){ 
+        $product_id = $product->id;
 
+        $cartItem = null;
+        
+        if (array_key_exists($product_id, $this->cartItems)) {
+            $cartItem = $this->cartItems[$product_id];
+            $cartItem->increaseQtyByOne();
+        }else {
+            $cartItem = new CartItem($product);
+        }
+
+        $this->cartItems[$product_id] = $cartItem;
+        $this->totalQty++;
+        $this->totalPrice += $product->price;
+
+        
         session()->put('cart', $this);
     }
 

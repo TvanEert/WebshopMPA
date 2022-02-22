@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 
+
 class ProductController extends Controller
 {
     function getAllProducts(){
@@ -14,16 +15,11 @@ class ProductController extends Controller
     }
 
     function getProduct($product_id){
-        $product = Product::getOneProduct($product_id);
-        $categories = Product::getProductCategories($product_id);
+        $product = Product::findOrFail($product_id);
 
-        return view('product', compact('product', 'categories'));
+        return view('product', compact('product'));
     }
 
-    function getProductWithoutCategory($product_id){
-        $product = Product::getOneProduct($product_id);
-
-        return $product;
-    }
+    
 }
 

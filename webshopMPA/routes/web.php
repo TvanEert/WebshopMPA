@@ -39,6 +39,6 @@ Route::get('/product/{product_id}', [ProductController::class, 'getProduct']);
 |--------------------------------------------------------------------------
 */
 Route::get('/cart', [CartController::class, 'getAllProductsFromCart'])->name('cart');
-Route::get('/addToCart/{product_id}', [CartController::class, 'addProductToCart']);
+Route::get('/addToCart/{product}', [CartController::class, 'addProductToCart']);
 Route::get('/removeFromCart/{product_id}', [CartController::class, 'removeProductFromCart']);
 Route::get('/reduceProductByOne/{product_id}', [CartController::class, 'reduceProductByOneInCart']);
