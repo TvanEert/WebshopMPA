@@ -59,6 +59,23 @@ class Cart
         session()->put('cart', $this);
     }
 
+    public function reduceByOneInCart($product){
+        $product_id = $product->id;
+
+        $cartItem = $this->cartItems[$product_id];
+        $cartItem->decreaseQtyByOne();
+        if ($cartItem->getQty() <= 0) {
+            unset($this->cartItems[$product_id]);
+        }else{
+            $this->cartItems[$product_id] = $cartItem;
+        }
+        
+        $this->totalQty--;
+        $this->totalPrice -= $product->price;
+
+        $this->saveToSession();
+    }
+
     /**
      * Call removeAllFromCart
      * 
@@ -67,23 +84,12 @@ class Cart
      * Call save to update session
      */
      
-    public function removeAllFromCart($id){
-        $this->totalQty -= $this->products[$id] ['qty'];
-        $this->totalprice -= $this->products[$id] ['price'];
-        unset($this->products[$id]);
-        $this->saveToSession();
-    }
+    public function removeAllFromCart($product){
+        $product_id = $product->id;
 
-    public function reduceByOneInCart($id){
-        $this->products[$id]['qty']--;
-        $this->products[$id]['price'] -= $this->products[$id]['product']['price'];
-        $this->totalQty--;
-        $this->totalprice -= $this->products[$id]['product']['price'];
-
-        if ($this->products[$id]['qty'] <= 0) {
-            unset($this->products[$id]);
-        }
-
+        $this->totalQty -= $this->cartItems[$product_id] ['qty'];
+        $this->totalprice -= $this->cartItems[$product_id] ['price'];
+        unset($this->cartItems[$product_id]);
         $this->saveToSession();
     }
 }

@@ -21,6 +21,11 @@ class CartItem{
         $this->price = $this->qty * $this->product->price;
     }
 
+    public function decreaseQtyByOne(){
+        $this->qty = $this->qty - 1;
+        $this->price = $this->qty * $this->product->price;
+    }
+
     public function getQty(){
         return $this->qty;
     }

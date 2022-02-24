@@ -25,16 +25,16 @@ class CartController extends Controller
         return redirect()->route('cart');
     }
 
-    public function removeProductFromCart(Request $request, $product_id){
+    public function removeProductFromCart(Request $request, Product $product){
         $cart = new Cart($request);
-        $cart->removeAllFromCart($product_id);
+        $cart->removeAllFromCart($product);
 
         return redirect()->route('cart');
     }
 
-    public function reduceProductByOneInCart(){
+    public function reduceProductByOneInCart(Request $request, Product $product){
         $cart = new Cart($request);
-        $cart->reduceByOneInCart($request);
+        $cart->reduceByOneInCart($product);
         
         return redirect()->route('cart');
     }
