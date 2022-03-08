@@ -55,7 +55,6 @@ class Cart
         $this->totalQty++;
         $this->totalPrice += $product->price;
 
-        
         session()->put('cart', $this);
     }
 
@@ -77,18 +76,20 @@ class Cart
     }
 
     /**
-     * Call removeAllFromCart
+     * 
      * 
      * @param int $id
      * 
-     * Call save to update session
+     * Call save to session function to update the session.
      */
      
     public function removeAllFromCart($product){
         $product_id = $product->id;
 
-        $this->totalQty -= $this->cartItems[$product_id] ['qty'];
-        $this->totalprice -= $this->cartItems[$product_id] ['price'];
+        $cartItem = $this->cartItems[$product_id];
+
+        $this->totalQty -= $cartItem->getQty();
+        $this->totalPrice -= $cartItem->getPrice();
         unset($this->cartItems[$product_id]);
         $this->saveToSession();
     }

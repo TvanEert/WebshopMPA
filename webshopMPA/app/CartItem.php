@@ -29,4 +29,8 @@ class CartItem{
     public function getQty(){
         return $this->qty;
     }
+
+    public function getPrice(){
+        return $this->price;
+    }
 }
