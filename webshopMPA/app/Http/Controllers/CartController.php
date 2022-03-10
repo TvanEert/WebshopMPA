@@ -15,7 +15,7 @@ class CartController extends Controller
         $totalQty = $cart->totalQty;
         $totalPrice = $cart->totalPrice;
         
-        return view("cart", compact('cartItems', 'totalQty', 'totalPrice'));
+        return view('cart', compact('cartItems', 'totalQty', 'totalPrice'));
     }
 
     public function addProductToCart(Request $request, Product $product){
@@ -34,7 +34,7 @@ class CartController extends Controller
 
     public function removeProductFromCart(Request $request, Product $product){
         $cart = new Cart($request);
-        $cart->removeAllFromCart($product);
+        $cart->removeFromCart($product);
 
         return redirect()->route('cart');
     }

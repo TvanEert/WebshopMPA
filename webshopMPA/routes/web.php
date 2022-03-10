@@ -42,3 +42,7 @@ Route::get('/cart', [CartController::class, 'getAllProductsFromCart'])->name('ca
 Route::get('/addToCart/{product}', [CartController::class, 'addProductToCart']);
 Route::get('/removeFromCart/{product}', [CartController::class, 'removeProductFromCart']);
 Route::get('/reduceProductByOne/{product}', [CartController::class, 'reduceProductByOneInCart']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
