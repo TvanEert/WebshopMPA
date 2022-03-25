@@ -20,6 +20,10 @@
     <div class="container mt-5">
         <p><b> Total Products: </b>{{$totalQty}}</p>
         <p><b> Total Price: </b>{{$totalPrice}}</p>
+        <br>
+        @auth
+            <a href="{{ url('/')}}" class="btn btn-primary">Check out</a>
+        @endauth    
     </div>
 </div>
 @include('includes.footer')

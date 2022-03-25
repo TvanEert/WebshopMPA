@@ -15,7 +15,7 @@ class CartController extends Controller
         $totalQty = $cart->totalQty;
         $totalPrice = $cart->totalPrice;
         
-        return view('cart', compact('cartItems', 'totalQty', 'totalPrice'));
+        return view('cart', ['cartItems' => $cartItems, 'totalQty' => $totalQty, 'totalPrice' => $totalPrice]);
     }
 
     public function addProductToCart(Request $request, Product $product){
