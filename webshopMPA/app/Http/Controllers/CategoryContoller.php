@@ -10,12 +10,12 @@ class CategoryContoller extends Controller
     function getAllCategories(){
         $allCategories = Category::all();
         
-        return view('home', compact('allCategories'));
+        return view('home', ['allCategories' => $allCategories]);
     }
 
     function getAllProductsFromCategory($category_id){
-        $categoryProducts = Category::getProducts($category_id);
+        $category = Category::findOrFail($category_id);        
 
-        return view('categoryProduct', compact('categoryProducts'));
+        return view('categoryProduct', ['category' => $category]);
     }
 }

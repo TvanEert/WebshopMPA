@@ -51,6 +51,15 @@ class CategoryProductSeeder extends Seeder
             ],[
                 'category_id' => '4',
                 'product_id' => '5'
+            ],[
+                'category_id' => '1',
+                'product_id' => '6'
+            ],[
+                'category_id' => '3',
+                'product_id' => '6'
+            ],[
+                'category_id' => '4',
+                'product_id' => '6'
             ]
         ]);
     }

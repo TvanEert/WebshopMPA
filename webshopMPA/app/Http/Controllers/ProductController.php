@@ -17,7 +17,7 @@ class ProductController extends Controller
     function getProduct($product_id){
         $product = Product::findOrFail($product_id);
 
-        return view('product', compact('product'));
+        return view('product', ['product' => $product]);
     }
 }
 

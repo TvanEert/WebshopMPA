@@ -3,6 +3,7 @@
 <div class="container-fluid text-center">
     <div id="carouselExampleControls" class="carousel slide w-50 h-50 carousel-margin" data-bs-ride="carousel">
         <div class="container">
+            
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="{{ url('image/battlefield2042.jpg') }}" class="d-block w-100">

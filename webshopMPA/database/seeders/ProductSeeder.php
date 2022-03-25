@@ -40,7 +40,12 @@ class ProductSeeder extends Seeder
                 'description' => 'test description New World',
                 'image' => 'https://wallpapercave.com/wp/wp6369200.jpg',
                 'price' => 39.99
-            ]   
+            ],[
+                'name' => 'Dying Light 2',
+                'description' => 'test description Dying Light 2',
+                'image' => 'https://www.gamekings.tv/wp-content/uploads/Dying-Light-2-gameplay-trailer-over-verhaal-achter-Aiden-1280x720.jpg',
+                'price' => 59.99
+            ],
         ]);
     }
 }
