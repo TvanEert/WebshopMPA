@@ -14,10 +14,10 @@ class ProductController extends Controller
         return view('allProducts', ['allProducts' => $allProducts]);
     }
 
-    function getProduct($product_id){
-        $product = Product::findOrFail($product_id);
+    function getProduct(Product $product){
+        //$product = Product::findOrFail($product_id);
 
         return view('product', ['product' => $product]);
     }
-}
+} 
 

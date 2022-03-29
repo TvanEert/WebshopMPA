@@ -13,8 +13,8 @@ class CategoryContoller extends Controller
         return view('home', ['allCategories' => $allCategories]);
     }
 
-    function getAllProductsFromCategory($category_id){
-        $category = Category::findOrFail($category_id);        
+    function getAllProductsFromCategory(Category $category){
+        //$category = Category::findOrFail($category_id);        
 
         return view('categoryProduct', ['category' => $category]);
     }

@@ -20,7 +20,7 @@
                                 <li class="list-group-item">{{ $category->category }}</li>
                             @endforeach
                         </ul>
-                    </div>
+                    </div> 
                 </div>
             </div>
         </div>

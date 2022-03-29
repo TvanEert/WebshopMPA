@@ -23,15 +23,15 @@ use App\Http\Controllers\CartController;
 |--------------------------------------------------------------------------
 */
 Route::get('/', [CategoryContoller::class, 'getAllCategories'])->name('home');
-Route::get('/category/{category_id}', [CategoryContoller::class, 'getAllProductsFromCategory']);
+Route::get('/category/{category}', [CategoryContoller::class, 'getAllProductsFromCategory']);
 
-/*
+/* 
 |--------------------------------------------------------------------------
 | Product Routes
 |--------------------------------------------------------------------------
 */
 Route::get('/products', [ProductController::class, 'getAllProducts'])->name('products');
-Route::get('/product/{product_id}', [ProductController::class, 'getProduct']);
+Route::get('/product/{product}', [ProductController::class, 'getProduct']);
 
 /*
 |--------------------------------------------------------------------------
