@@ -52,18 +52,18 @@ class Cart
      */
 
     public function addToCart($product){ 
-        $product_id = $product->id;
+        $productId = $product->id;
 
         $cartItem = null;
         
-        if (array_key_exists($product_id, $this->cartItems)) {
-            $cartItem = $this->cartItems[$product_id];
+        if (array_key_exists($productId, $this->cartItems)) {
+            $cartItem = $this->cartItems[$productId];
             $cartItem->increaseQtyByOne();
         }else {
             $cartItem = new CartItem($product);
         }
 
-        $this->cartItems[$product_id] = $cartItem;
+        $this->cartItems[$productId] = $cartItem;
         $this->totalQty++;
         $this->totalPrice += $product->price;
 
@@ -81,14 +81,14 @@ class Cart
      */
 
     public function reduceByOneInCart($product){
-        $product_id = $product->id;
+        $productId = $product->id;
 
-        $cartItem = $this->cartItems[$product_id];
+        $cartItem = $this->cartItems[$productId];
         $cartItem->decreaseQtyByOne();
         if ($cartItem->getQty() <= 0) {
-            unset($this->cartItems[$product_id]);
+            unset($this->cartItems[$productId]);
         }else{
-            $this->cartItems[$product_id] = $cartItem;
+            $this->cartItems[$productId] = $cartItem;
         }
         
         $this->totalQty--;
@@ -108,13 +108,13 @@ class Cart
      */
      
     public function removeFromCart($product){
-        $product_id = $product->id;
+        $productId = $product->id;
 
-        $cartItem = $this->cartItems[$product_id];
+        $cartItem = $this->cartItems[$productId];
 
         $this->totalQty -= $cartItem->getQty();
         $this->totalPrice -= $cartItem->getPrice();
-        unset($this->cartItems[$product_id]);
+        unset($this->cartItems[$productId]);
         $this->saveToSession();
     }
 }

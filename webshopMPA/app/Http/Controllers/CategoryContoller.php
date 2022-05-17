@@ -14,8 +14,6 @@ class CategoryContoller extends Controller
     }
 
     function getAllProductsFromCategory(Category $category){
-        //$category = Category::findOrFail($category_id);        
-
         return view('categoryProduct', ['category' => $category]);
     }
 }
