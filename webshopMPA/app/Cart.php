@@ -19,7 +19,7 @@ class Cart
             $this->totalPrice = $oldcart->totalPrice;
         }  
 
-        $this->saveToSession();
+        $this->saveToSession($request);
     }
 
     /**
@@ -33,11 +33,11 @@ class Cart
      *  Call session forget to remove the cart object from the session.
      */
 
-    public function saveToSession(){
+    public function saveToSession(Request $request){
         if(count($this->cartItems) > 0){
-            session()->put('cart', $this);
+            $request->session()->put('cart', $this);
         } else {
-            session()->forget('cart');
+            $request->session()->forget('cart');
         }
     }
 
