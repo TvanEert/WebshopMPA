@@ -12,9 +12,11 @@ class OrderController extends Controller
         Auth::check();
         $userId = Auth::id();
 
-        Order::createOrder($userId, $request);
+        $order = new Order();
 
-        $this->getCurrentUserOrders();
+        $order->createOrder($userId, $request);
+
+        return redirect()->route('orders');
     }
 
     public function getCurrentUserOrders(){

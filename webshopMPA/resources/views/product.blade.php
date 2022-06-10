@@ -4,7 +4,6 @@
     <div class="container">
         <div class="card">
             <div class="card-body">
-                {{dd($product->categories)}}
                 <h3 class="card-title">{{ $product->name}}</h3>
                 <div class="row">
                     <div class="col-lg-5 col-md-5 col-sm-6 vh-10 vw-10">
