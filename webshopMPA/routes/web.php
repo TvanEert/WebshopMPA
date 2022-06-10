@@ -42,7 +42,8 @@ Route::get('/product/{product}', [ProductController::class, 'getProduct']);
 |--------------------------------------------------------------------------
 */
 
-Route::get('/orders', [OrderController::class, 'confirmOrder'])->name('orders');
+Route::get('/confirmOrder', [OrderController::class, 'confirmOrder']);
+Route::get('/orders', [OrderController::class, 'getCurrentUserOrders'])->name('orders');
 
 /*
 |--------------------------------------------------------------------------

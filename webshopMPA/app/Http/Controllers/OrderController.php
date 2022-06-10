@@ -12,9 +12,17 @@ class OrderController extends Controller
         Auth::check();
         $userId = Auth::id();
 
-        $order = new Order();
-        $order->createOrder($userId, $request);
+        Order::createOrder($userId, $request);
 
-        return view('home');
+        $this->getCurrentUserOrders();
+    }
+
+    public function getCurrentUserOrders(){
+        Auth::check();
+        $userId = Auth::id();
+
+        $orders = Order::where('user_id', $userId)->get();
+
+        return view('orders', ['orders' => $orders]);
     }
 }

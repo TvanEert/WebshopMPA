@@ -22,7 +22,7 @@
         <p><b> Total Price: </b>{{$totalPrice}}</p>
         <br>
         @auth
-            <a href="{{ url('/orders')}}" class="btn btn-primary">Check out</a>
+            <a href="{{ url('/confirmOrder')}}" class="btn btn-primary">Check out</a>
         @endauth    
     </div>
 </div>
